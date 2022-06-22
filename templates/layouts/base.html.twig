@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<div class="flex flex-col justify-between min-h-screen">
+    <div class="flex-1">
+        {% block header %}
+            <div class="h-16 bg-white shadow mb-4">
+                <div class="container mx-auto">
+                    {% include 'modules/menu.module.html.twig' %}
+                </div>
+            </div>
+        {% endblock %}
+        {% block body %}{% endblock %}
+    </div>
+    <div class="bg-gray-900 min-h-[300px]"></div>
+</div>
+</body>
+</html>

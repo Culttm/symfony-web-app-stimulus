@@ -1,0 +1,6 @@
+<div class="grid grid-flow-col grid-cols-12 gap-4" data-controller="clipboard">
+    <label class="col-span-full">
+        <input data-clipboard-target="source" class="h-full bg-white border border-solid border-gray-300 rounded px-4 w-full" type="text" value="{{ 'now' | date('m/d/Y h.s') }}" readonly />
+    </label>
+    <button data-action="clipboard#copy" class="h-10 rounded px-4 bg-green-400 transition-all hover:bg-green-500 flex items-center text-xs">Copy to Clipboard</button>
+</div>

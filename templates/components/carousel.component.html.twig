@@ -1,0 +1,17 @@
+{% if data is defined and data is iterable %}
+    <div data-controller="carousel" class="max-w-full relative">
+        <div class="h-[300px] overflow-hidden mb-4">
+            <div class="flex">
+                {% for slide in data %}
+                    <div class="slide bg-white border border-solid rounded h-[300px] border-gray-200 flex items-center justify-center">
+                        <img loading="lazy" src="{{ slide.url }}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="grid grid-flow-col gap-8 justify-center cursor-pointer">
+            <button data-action="carousel#prev" class="flex items-center justify-center left-0 top-0 w-12 h-12 transition-all hover:opacity-50">&larr;</button>
+            <button data-action="carousel#next" class="flex items-center justify-center right-0 top-0 w-12 h-12 transition-all hover:opacity-50">&rarr;</button>
+        </div>
+    </div>
+{% endif %}

@@ -10,6 +10,8 @@ services:
         SKELETON: ${SKELETON:-symfony/skeleton}
         STABILITY: ${STABILITY:-stable}
     restart: unless-stopped
+    ports:
+      - "9000:9000"
     volumes:
       - php_socket:/var/run/php
     healthcheck:
@@ -54,6 +56,19 @@ services:
         published: ${HTTP3_PORT:-443}
         protocol: udp
 
+  node:
+    image: node:16
+    user: node
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./docker/node/docker-entrypoint.sh:/tmp/docker-entrypoint.sh
+    ports:
+      - "8080:8080"
+    depends_on:
+      - php
+#    entrypoint: /tmp/docker-entrypoint.sh
 # Mercure is installed as a Caddy module, prevent the Flex recipe from installing another service
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###

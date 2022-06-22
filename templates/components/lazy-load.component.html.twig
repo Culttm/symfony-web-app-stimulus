@@ -1,0 +1,5 @@
+{% if url is defined and url is not null %}
+    <div data-controller="lazy-load" data-lazy-load-url-value="{{ url }}">
+        <div data-lazy-load-target="output"></div>
+    </div>
+{% endif %}

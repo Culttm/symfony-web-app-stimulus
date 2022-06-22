@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": "assets",
+    "rootDir": "assets",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "ES2020",
+    "target": "es6",
+    "jsx": "react",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": false,
+    "strict": true,
+    "noImplicitOverride": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "strictNullChecks": false,
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+    "removeComments": false
+  },
+  "include": [
+    "assets/**/*"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "node_modules"
+  ]
+}
